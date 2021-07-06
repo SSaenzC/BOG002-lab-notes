@@ -6,12 +6,18 @@ export default function SignUp() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { firebaseSignUp } = useAuth();
+  const { emailAndPasswordSignUp } = useAuth();
+  const { googleLogIn } = useAuth();
 
   function formSubmit(event) {
     event.preventDefault();
 
-    firebaseSignUp(emailRef.current.value, passwordRef.current.value);
+    emailAndPasswordSignUp(emailRef.current.value, passwordRef.current.value);
+  }
+
+  function googleButtonSubmit(event) {
+    event.preventDefault();
+    googleLogIn();
   }
 
   return (
@@ -36,10 +42,10 @@ export default function SignUp() {
           </label>
           <button type="submit" >Registrarse</button>
         </form>
-        {/* <h2>ó</h2>
-        <button>Continua con google</button> */}
+        <h2>ó</h2>
+        <button onClick={googleButtonSubmit}>Continue with google</button>
         <div>
-          Ya tienes una cuenta? LogIn
+          Already have an account? LogIn
         </div>
       </section>
     </div>
