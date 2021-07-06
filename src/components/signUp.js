@@ -1,29 +1,37 @@
 import React, { useRef } from 'react';
-// import firebaseInit from '../firebase';
+import { useAuth } from '../contexts/AuthContext';
+import '../App.css';
 
 export default function SignUp() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const { firebaseSignUp } = useAuth();
+
+  function formSubmit(event) {
+    event.preventDefault();
+
+    firebaseSignUp(emailRef.current.value, passwordRef.current.value);
+  }
 
   return (
     <div>
-      <h1>Bienvendio a RememberMe!!</h1>
+      <h1>Welcome to Remember Me!!</h1>
       <p>Guarda tus pensamientos, recordatorios, ideas,
         hasta la lista de mercado en un solo lugar!</p>
       <h2>Regístrate</h2>
       <section>
-        <form>
-          <label>
-            Nombre
+        <form onSubmit={formSubmit} className='signUpForm'>
+          <label className='inputs'>
+            Name
             <input type="text" ref={nameRef} required />
           </label>
-          <label>
-            Correo
+          <label className='inputs'>
+            Email
             <input type="email" ref={emailRef} required />
           </label>
-          <label>
-            Contraseña
+          <label className='inputs'>
+            Password
             <input type="password" ref={passwordRef} required />
           </label>
           <button type="submit" >Registrarse</button>
@@ -31,7 +39,7 @@ export default function SignUp() {
         {/* <h2>ó</h2>
         <button>Continua con google</button> */}
         <div>
-          Ya tienes una cuenta? Ingresa aquí
+          Ya tienes una cuenta? LogIn
         </div>
       </section>
     </div>
