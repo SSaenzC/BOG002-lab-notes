@@ -7,7 +7,7 @@ export default function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { emailAndPasswordSignUp } = useAuth();
-  const { googleLogIn } = useAuth();
+  const { googleLogIn, facebokLogIn } = useAuth();
 
   function formSubmit(event) {
     event.preventDefault();
@@ -20,6 +20,10 @@ export default function SignUp() {
     googleLogIn();
   }
 
+  function facebookButtonSubmit(event) {
+    event.preventDefault();
+    facebokLogIn();
+  }
   return (
     <div>
       <h1>Welcome to Remember Me!!</h1>
@@ -43,7 +47,8 @@ export default function SignUp() {
           <button type="submit" >Registrarse</button>
         </form>
         <h2>ó</h2>
-        <button onClick={googleButtonSubmit}>Continue with google</button>
+        <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>
+        <button onClick={facebookButtonSubmit} className='loginSocialMedia'>Continue with Facebook</button>
         <div>
           Already have an account? LogIn
         </div>

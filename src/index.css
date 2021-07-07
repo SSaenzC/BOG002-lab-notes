@@ -29,3 +29,9 @@ code {
 .inputs{
   padding: 1%;
 }
+
+.loginSocialMedia{
+  display: flex;
+  align-items: center;
+  margin: 2%;
+}
