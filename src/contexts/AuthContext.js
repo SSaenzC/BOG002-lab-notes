@@ -19,6 +19,7 @@ export function AuthProvider({ children }) {
   function googleLogIn() {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return auth.signInWithPopup(googleProvider).then((result) => {
+      // eslint-disable-next-line no-console
       console.log(result);
     });
   }
@@ -26,6 +27,7 @@ export function AuthProvider({ children }) {
   function facebokLogIn() {
     const facebookProvider = new firebase.auth.FacebookAuthProvider();
     return auth.signInWithPopup(facebookProvider).then((result) => {
+      // eslint-disable-next-line no-console
       console.log(result.user);
     });
   }
