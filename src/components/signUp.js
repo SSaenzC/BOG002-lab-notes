@@ -32,7 +32,7 @@ export default function SignUp() {
       <h1>Welcome to Remember Me!!</h1>
       <p>Guarda tus pensamientos, recordatorios, ideas,
         hasta la lista de mercado en un solo lugar!</p>
-      <h2>Regístrate</h2>
+      <h2>Sign Up</h2>
       <section>
         <form onSubmit={formSubmit} className='signUpForm'>
           <label className='inputs'>
@@ -47,7 +47,7 @@ export default function SignUp() {
             Password
             <input type="password" ref={passwordRef} required />
           </label>
-          <button type="submit" >Registrarse</button>
+          <button type="submit" >Sign Up</button>
         </form>
         <h2>ó</h2>
         <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>

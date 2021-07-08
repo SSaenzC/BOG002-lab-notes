@@ -4,17 +4,16 @@ import { useAuth } from '../contexts/AuthContext';
 import '../App.css';
 
 export default function Login() {
-  const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { emailAndPasswordSignUp } = useAuth();
+  const { logIn } = useAuth();
   const { googleLogIn, facebokLogIn } = useAuth();
   const history = useHistory();
 
   function formSubmit(event) {
     event.preventDefault();
 
-    emailAndPasswordSignUp(emailRef.current.value, passwordRef.current.value);
+    logIn(emailRef.current.value, passwordRef.current.value);
     history.push('/');
   }
 
@@ -29,16 +28,12 @@ export default function Login() {
   }
   return (
     <div>
-      <h1>Welcome to Remember Me!!</h1>
+      <h1>Welcome back to Remember Me!!</h1>
       <p>Guarda tus pensamientos, recordatorios, ideas,
         hasta la lista de mercado en un solo lugar!</p>
-      <h2>Regístrate</h2>
+      <h2>Log In</h2>
       <section>
         <form onSubmit={formSubmit} className='signUpForm'>
-          <label className='inputs'>
-            Name
-            <input type="text" ref={nameRef} required />
-          </label>
           <label className='inputs'>
             Email
             <input type="email" ref={emailRef} required />
@@ -47,7 +42,7 @@ export default function Login() {
             Password
             <input type="password" ref={passwordRef} required />
           </label>
-          <button type="submit" >Registrarse</button>
+          <button type="submit" >Log In</button>
         </form>
         <h2>ó</h2>
         <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>

@@ -16,6 +16,10 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
+  function logIn(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+
   function googleLogIn() {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return auth.signInWithPopup(googleProvider).then((result) => {
@@ -44,6 +48,7 @@ export function AuthProvider({ children }) {
     emailAndPasswordSignUp,
     googleLogIn,
     facebokLogIn,
+    logIn,
   };
 
   return (
