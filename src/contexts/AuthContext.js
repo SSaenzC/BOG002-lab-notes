@@ -36,6 +36,10 @@ export function AuthProvider({ children }) {
     });
   }
 
+  function logOut() {
+    return auth.signOut();
+  }
+
   useEffect(() => {
     const notLogedIn = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -49,6 +53,7 @@ export function AuthProvider({ children }) {
     googleLogIn,
     facebokLogIn,
     logIn,
+    logOut,
   };
 
   return (
