@@ -2,10 +2,11 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SignUp from './components/SignUp';
+import SignUp from './components/signUp';
 import { AuthProvider } from './contexts/AuthContext';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
+// import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (

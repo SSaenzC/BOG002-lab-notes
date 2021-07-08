@@ -47,7 +47,7 @@ export default function SignUp() {
             Password
             <input type="password" ref={passwordRef} required />
           </label>
-          <button type="submit" >Registrarse</button>
+          <button type="submit" >Sign Up</button>
         </form>
         <h2>ó</h2>
         <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>
