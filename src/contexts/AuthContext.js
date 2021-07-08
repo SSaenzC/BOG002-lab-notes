@@ -16,6 +16,10 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
+  function logIn(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+
   function googleLogIn() {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return auth.signInWithPopup(googleProvider).then((result) => {
@@ -32,6 +36,10 @@ export function AuthProvider({ children }) {
     });
   }
 
+  function logOut() {
+    return auth.signOut();
+  }
+
   useEffect(() => {
     const notLogedIn = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -44,6 +52,8 @@ export function AuthProvider({ children }) {
     emailAndPasswordSignUp,
     googleLogIn,
     facebokLogIn,
+    logIn,
+    logOut,
   };
 
   return (

@@ -6,14 +6,14 @@ import '../App.css';
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { emailAndPasswordSignUp } = useAuth();
+  const { logIn } = useAuth();
   const { googleLogIn, facebokLogIn } = useAuth();
   const history = useHistory();
 
   function formSubmit(event) {
     event.preventDefault();
 
-    emailAndPasswordSignUp(emailRef.current.value, passwordRef.current.value);
+    logIn(emailRef.current.value, passwordRef.current.value);
     history.push('/');
   }
 
