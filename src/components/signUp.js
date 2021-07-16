@@ -33,7 +33,7 @@ export default function SignUp() {
       <p>Guarda tus pensamientos, recordatorios, ideas,
         hasta la lista de mercado en un solo lugar!</p>
       <h2>Sign Up</h2>
-      <section>
+      <section className='Authentication'>
         <form onSubmit={formSubmit} className='signUpForm'>
           <label className='inputs'>
             Name
@@ -50,7 +50,7 @@ export default function SignUp() {
           <button type="submit" >Sign Up</button>
         </form>
         <h2>ó</h2>
-        <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>
+        <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button><br/>
         <button onClick={facebookButtonSubmit} className='loginSocialMedia'>Continue with Facebook</button>
         <div>
           Already have an account? <Link to = "/login">LogIn</Link>

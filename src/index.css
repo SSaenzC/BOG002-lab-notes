@@ -15,23 +15,8 @@ code {
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+ 
   font-family: 'Gloria Hallelujah', cursive;
 }
 
-.signUpForm{
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.inputs{
-  padding: 1%;
-}
-
-.loginSocialMedia{
-  display: flex;
-  align-items: center;
-  margin: 2%;
-}

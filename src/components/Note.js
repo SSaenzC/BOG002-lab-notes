@@ -1,33 +1,41 @@
 import React, { useState } from 'react';
 import { addNote } from '../contexts/Firestorefunctions';
 
-// eslint-disable-next-line react/prop-types
-export default function Note({ user }) {
+export default function Note(propiedades) {
+  const user = propiedades.user;
   const initialStateValues = {
     title: '',
     note: '',
   };
 
   const [values, setValues] = useState(initialStateValues);
+  // const [notes, setNotes] = useState([]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    // eslint-disable-next-line react/prop-types
     setValues({ ...values, [name]: value, user: user.email });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // eslint-disable-next-line react/prop-types
-    console.log(values);
     addNote(values);
+    setValues({ ...initialStateValues });
   };
+
+  // useEffect(() => {
+  //   getNotes();
+  // }, []);
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label>
-          Title: <input type="text" name="title" onChange={handleInputChange} />
+          Title:
+          <input
+          type="text"
+          name="title"
+          onChange={handleInputChange}
+          value={values.title}/>
         </label>
         <div>
           <textarea
@@ -35,6 +43,7 @@ export default function Note({ user }) {
             rows="3"
             name="note"
             onChange={handleInputChange}
+            value={values.note}
           ></textarea>
         </div>
         <div>

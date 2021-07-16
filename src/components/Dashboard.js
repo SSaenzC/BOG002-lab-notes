@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import Note from './Note';
+import './Dashboard.css';
 
 export default function Dashboard() {
   const { currentUser, logOut } = useAuth();
@@ -9,18 +10,19 @@ export default function Dashboard() {
 
   function handleLogOut() {
     logOut();
-    history.push('/signup');
+    history.push('/login');
   }
 
   return (
     <div>
-      <h2>Profile</h2>
       <strong>Welcome </strong>
       {currentUser.email}
-      <button variant="link" onClick={handleLogOut}>
+      <button variant="link" onClick={handleLogOut} className="logOutButton">
         Log Out
       </button>
-      <Note user={currentUser} />
+      <section className="noteArea">
+        <Note user={currentUser}/>
+      </section>
     </div>
   );
 }

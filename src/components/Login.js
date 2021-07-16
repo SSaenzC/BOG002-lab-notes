@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import '../App.css';
+import './Login.css';
 
 export default function Login() {
   const emailRef = useRef();
@@ -20,35 +20,41 @@ export default function Login() {
   function googleButtonSubmit(event) {
     event.preventDefault();
     googleLogIn();
+    history.push('/');
   }
 
   function facebookButtonSubmit(event) {
     event.preventDefault();
     facebokLogIn();
+    history.push('/');
   }
   return (
     <div>
       <h1>Welcome back to Remember Me!!</h1>
-      <p>Guarda tus pensamientos, recordatorios, ideas,
-        hasta la lista de mercado en un solo lugar!</p>
+      <p>
+        Guarda tus pensamientos, recordatorios, ideas, hasta la lista de mercado
+        en un solo lugar!
+      </p>
       <h2>Log In</h2>
-      <section>
-        <form onSubmit={formSubmit} className='signUpForm'>
-          <label className='inputs'>
+      <section className="Authentication">
+        <form onSubmit={formSubmit} className="signUpForm">
+          <label className="inputs">
             Email
             <input type="email" ref={emailRef} required />
           </label>
-          <label className='inputs'>
+          <label className="inputs">
             Password
             <input type="password" ref={passwordRef} required />
           </label>
-          <button type="submit" >Log In</button>
+          <button type="submit">Log In</button>
         </form>
         <h2>ó</h2>
-        <button onClick={googleButtonSubmit} className='loginSocialMedia'>Continue with Google</button>
-        <button onClick={facebookButtonSubmit} className='loginSocialMedia'>Continue with Facebook</button>
+        <div className="loginSocialMedia">
+          <button onClick={googleButtonSubmit}>Continue with Google</button><br/>
+          <button onClick={facebookButtonSubmit}>Continue with Facebook</button>
+        </div>
         <div>
-          Need an account? <Link to = "/signup">Sign Up</Link>
+          Need an account? <Link to="/signup">Sign Up</Link>
         </div>
       </section>
     </div>

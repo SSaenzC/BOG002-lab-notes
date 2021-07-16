@@ -1,3 +1,19 @@
+*{
+  background-color: #f1f2f2
+}
+
+button{
+  background-color: #6eb5c0;
+  color: #ffffff;
+  font-size: medium;
+  border-radius: 4px;
+}
+
+input{
+  background-color: #bcbabe;
+  border: none;
+  border-radius: 4px;
+}
 .App {
   text-align: center;
 }

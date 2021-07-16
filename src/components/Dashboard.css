@@ -1,0 +1,13 @@
+.logOutButton{
+    display: flex;
+    align-items: flex-start;
+}
+
+textarea{
+    background-color: #bcbabe;
+    border-radius: 4px;
+}
+
+.noteArea{
+    border: 2px solid #5555a3;
+}
