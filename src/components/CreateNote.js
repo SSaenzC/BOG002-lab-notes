@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { addNote } from '../contexts/Firestorefunctions';
 
-export default function Note(propiedades) {
+export default function CreateNote(propiedades) {
   const user = propiedades.user;
   const initialStateValues = {
     title: '',
@@ -9,11 +9,12 @@ export default function Note(propiedades) {
   };
 
   const [values, setValues] = useState(initialStateValues);
-  // const [notes, setNotes] = useState([]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setValues({ ...values, [name]: value, user: user.email });
+    setValues({
+      ...values, [name]: value, user: user.email,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -21,10 +22,6 @@ export default function Note(propiedades) {
     addNote(values);
     setValues({ ...initialStateValues });
   };
-
-  // useEffect(() => {
-  //   getNotes();
-  // }, []);
 
   return (
     <>
