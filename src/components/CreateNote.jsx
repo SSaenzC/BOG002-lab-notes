@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { addNote } from '../contexts/Firestorefunctions';
 
 export default function CreateNote(propiedades) {
@@ -21,6 +22,9 @@ export default function CreateNote(propiedades) {
     e.preventDefault();
     addNote(values);
     setValues({ ...initialStateValues });
+    toast('New note added', {
+      type: 'success',
+    });
   };
 
   return (
@@ -32,7 +36,8 @@ export default function CreateNote(propiedades) {
           type="text"
           name="title"
           onChange={handleInputChange}
-          value={values.title}/>
+          value={values.title}
+          required/>
         </label>
         <div>
           <textarea
@@ -41,6 +46,7 @@ export default function CreateNote(propiedades) {
             name="note"
             onChange={handleInputChange}
             value={values.note}
+            required
           ></textarea>
         </div>
         <div>

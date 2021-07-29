@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext.jsx';
 import './Login.css';
 
 export default function Login() {

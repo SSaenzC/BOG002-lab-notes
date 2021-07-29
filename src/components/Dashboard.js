@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
 import { getNotes, deleteNote } from '../contexts/Firestorefunctions';
-import CreateNote from './CreateNote';
+import { useAuth } from '../contexts/AuthContext.jsx';
+import CreateNote from './CreateNote.jsx';
+import EditNote from './EditNote.jsx';
 import './Dashboard.css';
 
 export default function Dashboard() {
   const { currentUser, logOut } = useAuth();
   const history = useHistory();
   const [notes, setNote] = useState([]);
+
+  // const [currentId, setCurrentId] = useState(''); onClick={() => setCurrentId(note.id)}
 
   function handleLogOut() {
     logOut();
@@ -19,7 +22,6 @@ export default function Dashboard() {
     getNotes(setNote);
   }, []);
 
-  console.log(notes);
   return (
     <div>
       <section className="header">
@@ -32,25 +34,26 @@ export default function Dashboard() {
         </button>
       </section>
       <section className="noteArea">
-        < CreateNote user={currentUser}/>
+        <CreateNote user={currentUser} />
       </section>
       <section>
-        {
-          notes.map((note) => (<div key={note.id}>
+        {notes.map((note) => (
+          <div key={note.id}>
             <div>
-              <i
-              className="material-icons"
-              onClick={() => deleteNote(note.id)}
-              >delete</i>
-              <i
-              className="material-icons">edit</i>
+              <i className="material-icons" onClick={() => deleteNote(note.id)}>
+                delete
+              </i>
+              <i className="material-icons"
+              >edit</i>
             </div>
-              <h4>{note.title}</h4>
-              <p>{note.note}</p>
-            </div>))
-        }
+            <h4>{note.title}</h4>
+            <p>{note.note}</p>
+          </div>
+        ))}
       </section>
-
+      <section>
+        <EditNote></EditNote>
+      </section>
     </div>
   );
 }
