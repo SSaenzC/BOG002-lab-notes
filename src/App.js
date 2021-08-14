@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 
 // Import components
-import SignUp from './components/SignUp';
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
+import SignUp from './components/SignUp.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import Login from './components/Login.jsx';
 import PrivateRoute from './components/PrivateRoute';
-
 import './App.css';
+
+toast.configure();
 
 function App() {
   return (

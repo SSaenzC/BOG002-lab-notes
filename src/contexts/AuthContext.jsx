@@ -12,8 +12,20 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
-  function emailAndPasswordSignUp(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+  function emailAndPasswordSignUp(email, password, name) {
+    const register = auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        return user.updateProfile({ displayName: name });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        return {
+          error: true,
+          message: errorMessage,
+        };
+      });
+    return register;
   }
 
   function logIn(email, password) {

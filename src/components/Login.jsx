@@ -30,11 +30,8 @@ export default function Login() {
   }
   return (
     <div>
-      <h1>Welcome back to Remember Me!!</h1>
-      <p>
-        Guarda tus pensamientos, recordatorios, ideas, hasta la lista de mercado
-        en un solo lugar!
-      </p>
+      <h1>Welcome to remind me</h1>
+      <p>A place to store your reminders, notes, even the list of your groceries</p>
       <h2>Log In</h2>
       <section className="Authentication">
         <form onSubmit={formSubmit} className="signUpForm">

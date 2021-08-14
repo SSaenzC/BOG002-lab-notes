@@ -29,6 +29,7 @@ export default function CreateNote(propiedades) {
 
   return (
     <>
+      <h2>Add Note</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Title:

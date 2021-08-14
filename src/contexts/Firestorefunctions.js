@@ -2,7 +2,10 @@ import { toast } from 'react-toastify';
 import { db } from '../firebase';
 
 export const addNote = async (dataNotes) => {
-  await db.collection('notes').doc().set(dataNotes);
+  await db.collection('notes').doc().set(dataNotes, { created: firebase.database.ServerValue.TIMESTAMP });
+  // const updateTimeStamp = docRef.update({
+  //     timeStamp: db.FieldValue.serverTimestamp()
+  // });
 };
 
 export const getNotes = async (changeStatus) => {
@@ -25,4 +28,4 @@ export const deleteNote = async (id) => {
   }
 };
 
-export const updateNote = (id, updatedNote) => db.collection('publications').doc(id).update(updatedNote);
+export const updateNote = (id, updatedNote) => db.collection('notes').doc(id).update(updatedNote);

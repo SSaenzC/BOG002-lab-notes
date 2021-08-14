@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext.jsx';
 import '../App.css';
 
 export default function SignUp() {
@@ -14,7 +14,9 @@ export default function SignUp() {
   async function formSubmit(event) {
     event.preventDefault();
 
-    await emailAndPasswordSignUp(emailRef.current.value, passwordRef.current.value);
+    await emailAndPasswordSignUp(
+      emailRef.current.value, passwordRef.current.value, nameRef.current.value,
+    );
     history.push('/');
   }
 
@@ -29,13 +31,12 @@ export default function SignUp() {
   }
   return (
     <div>
-      <h1>Welcome to Remember Me!!</h1>
-      <p>Guarda tus pensamientos, recordatorios, ideas,
-        hasta la lista de mercado en un solo lugar!</p>
+      <h1>Welcome to Remind me</h1>
+      <p>A place to store your reminders, notes, even the list of your groceries</p>
       <h2>Sign Up</h2>
       <section className='Authentication'>
         <form onSubmit={formSubmit} className='signUpForm'>
-          <label className='inputs'>
+          <label className='inputs' >
             Name
             <input type="text" ref={nameRef} required />
           </label>
