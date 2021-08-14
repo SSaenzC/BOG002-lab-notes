@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/BOG002-lab-notes/static/css/main.710bb7ad.chunk.css",
+    "main.js": "/BOG002-lab-notes/static/js/main.d467e8a7.chunk.js",
+    "main.js.map": "/BOG002-lab-notes/static/js/main.d467e8a7.chunk.js.map",
+    "runtime-main.js": "/BOG002-lab-notes/static/js/runtime-main.e6929dc2.js",
+    "runtime-main.js.map": "/BOG002-lab-notes/static/js/runtime-main.e6929dc2.js.map",
+    "static/css/2.97503911.chunk.css": "/BOG002-lab-notes/static/css/2.97503911.chunk.css",
+    "static/js/2.bdca2743.chunk.js": "/BOG002-lab-notes/static/js/2.bdca2743.chunk.js",
+    "static/js/2.bdca2743.chunk.js.map": "/BOG002-lab-notes/static/js/2.bdca2743.chunk.js.map",
+    "static/js/3.32d8a136.chunk.js": "/BOG002-lab-notes/static/js/3.32d8a136.chunk.js",
+    "static/js/3.32d8a136.chunk.js.map": "/BOG002-lab-notes/static/js/3.32d8a136.chunk.js.map",
+    "index.html": "/BOG002-lab-notes/index.html",
+    "static/css/2.97503911.chunk.css.map": "/BOG002-lab-notes/static/css/2.97503911.chunk.css.map",
+    "static/css/main.710bb7ad.chunk.css.map": "/BOG002-lab-notes/static/css/main.710bb7ad.chunk.css.map",
+    "static/js/2.bdca2743.chunk.js.LICENSE.txt": "/BOG002-lab-notes/static/js/2.bdca2743.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6929dc2.js",
+    "static/css/2.97503911.chunk.css",
+    "static/js/2.bdca2743.chunk.js",
+    "static/css/main.710bb7ad.chunk.css",
+    "static/js/main.d467e8a7.chunk.js"
+  ]
+}
