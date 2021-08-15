@@ -17,7 +17,7 @@ toast.configure();
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={window.location.pathname || ''}>
         <AuthProvider>
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
