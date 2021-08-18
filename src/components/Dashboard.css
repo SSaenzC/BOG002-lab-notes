@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea{
+    background-color: #bcbabe;
+    border-radius: 4px;
+}
+
+.noteArea{
+    border: 2px solid #5555a3;
+}
