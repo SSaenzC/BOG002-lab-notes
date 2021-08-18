@@ -1,5 +1,5 @@
 {
-  "homepage": " https://ssaenzc.github.io/BOG002-lab-notes/",
+  "homepage": "https://ssaenzc.github.io/BOG002-lab-notes/",
   "name": "lab-notes",
   "version": "0.1.0",
   "private": false,
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy":"gh-pages -b master -d build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
