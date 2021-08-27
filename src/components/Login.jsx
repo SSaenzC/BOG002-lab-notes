@@ -7,7 +7,7 @@ export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { logIn } = useAuth();
-  const { googleLogIn, facebokLogIn } = useAuth();
+  const { googleLogIn } = useAuth();
   const history = useHistory();
 
   function formSubmit(event) {
@@ -23,11 +23,11 @@ export default function Login() {
     history.push('/');
   }
 
-  function facebookButtonSubmit(event) {
-    event.preventDefault();
-    facebokLogIn();
-    history.push('/');
-  }
+  // function facebookButtonSubmit(event) { , facebokLogIn
+  //   event.preventDefault();
+  //   facebokLogIn();
+  //   history.push('/');
+  // }
   return (
     <div>
       <h1>Welcome to Remind me</h1>
@@ -55,7 +55,7 @@ export default function Login() {
         <h2>ó</h2>
         <div className="loginSocialMedia">
           <button onClick={googleButtonSubmit}>Continue with Google</button><br/>
-          <button onClick={facebookButtonSubmit}>Continue with Facebook</button>
+          {/* <button onClick={facebookButtonSubmit}>Continue with Facebook</button> */}
         </div>
         <div>
           Need an account? <Link to="/signup">Sign Up</Link>

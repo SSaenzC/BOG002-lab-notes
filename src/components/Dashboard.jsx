@@ -27,6 +27,10 @@ export default function Dashboard() {
     setnoteEdit(note);
   };
 
+  // const savedChanges = () => {
+  //   setEdit(false);
+  // };
+
   return (
     <div>
       <section className="header">
