@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import { updateNote } from '../contexts/Firestorefunctions';
 
 export default function EditNote(propiedades) {
   const noteStatus = propiedades.edintingNote;
-  console.log('Soy el console log de note status', noteStatus);
+  const idNoteStatus = noteStatus.id;
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     updateNote(values);
-  //     // toast('New note added', {
-  //     //   type: 'success',
-  //     // });
-  //   };
+  const [modifiedValue, setModifiedValue] = useState(noteStatus);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setModifiedValue({ ...modifiedValue, [name]: value });
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    updateNote(idNoteStatus, modifiedValue);
+    toast('The note was edited', {
+      type: 'info',
+    });
+  };
 
   return (
     <>
         <h2>Edit Note</h2>
-        <form>
+        <form onSubmit={handleEdit}>
             <label>
                 Title:
                 <input
                 type="text"
                 name="title"
-                value={noteStatus.title}
+                onChange={handleInputChange}
+                value={modifiedValue.title}
                 required/>
             </label>
             <div>
@@ -29,7 +39,8 @@ export default function EditNote(propiedades) {
                     placeholder="Type your note here"
                     rows="3"
                     name="note"
-                    value={noteStatus.note}
+                    onChange={handleInputChange}
+                    value={modifiedValue.note}
                 required
                 ></textarea>
             </div>

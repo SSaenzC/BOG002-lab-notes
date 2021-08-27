@@ -28,4 +28,4 @@ export const deleteNote = async (id) => {
   }
 };
 
-export const updateNote = (id, updatedNote) => db.collection('notes').doc(id).update(updatedNote);
+export const updateNote = (id, updatedNote) => db.collection('notes').doc(id).update({ title: updatedNote.title, note: updatedNote.note });

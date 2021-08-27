@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';date: db.Timestamp.now(),
 import { addNote } from '../contexts/Firestorefunctions';
+// import { db } from '../firebase';
 
 export default function CreateNote(propiedades) {
   const user = propiedades.user;

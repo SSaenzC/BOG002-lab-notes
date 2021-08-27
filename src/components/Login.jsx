@@ -30,20 +30,27 @@ export default function Login() {
   }
   return (
     <div>
-      <h1>Welcome to remind me</h1>
+      <h1>Welcome to Remind me</h1>
       <p>A place to store your reminders, notes, even the list of your groceries</p>
       <h2>Log In</h2>
       <section className="Authentication">
         <form onSubmit={formSubmit} className="signUpForm">
-          <label className="inputs">
-            Email
-            <input type="email" ref={emailRef} required />
-          </label>
-          <label className="inputs">
-            Password
-            <input type="password" ref={passwordRef} required />
-          </label>
-          <button type="submit">Log In</button>
+          <section className="cajitas">
+            <div className="inputs">
+              <label>
+                Email
+              </label>
+              <input type="email" ref={emailRef} required />
+            </div>
+            <div className="inputs">
+              <label>
+                Password
+              </label>
+              <input type="password" ref={passwordRef} required />
+            </div>
+          </section>
+          {/* <br><br> */}
+          <button type="submit" className="loginbutton">Log In</button>
         </form>
         <h2>ó</h2>
         <div className="loginSocialMedia">
